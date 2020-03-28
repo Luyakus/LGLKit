@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:opengles-lesson-review/opengles-lesson-review.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:opengl-lesson-review/opengl-lesson-review.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LGLKit/LGLKit.xcodeproj">
+   </FileRef>
+</Workspace>
