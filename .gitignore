@@ -69,3 +69,4 @@ iOSInjectionProject/
 /opengl-lesson-review/opengl-lesson-review.xcodeproj/xcuserdata/sam.xcuserdatad/xcschemes/xcschememanagement.plist
 /opengl-lglkit.xcworkspace/xcuserdata/sam.xcuserdatad/UserInterfaceState.xcuserstate
 /opengles-lesson-review/opengles-lesson-review.xcodeproj/xcuserdata/sam.xcuserdatad/xcschemes/xcschememanagement.plist
+*.xcuserstate
