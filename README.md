@@ -1,5 +1,7 @@
 # LGLKit
-OpenGL面向对象封装
+OpenGL面向对象封装, 支持 iOS/MacOS, MacOS 下需要安装 glfw, 持续改进中...
+
+
 
 ```objc
 static NSString *vertexShaderString(void) {
