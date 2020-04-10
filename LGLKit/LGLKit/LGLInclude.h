@@ -22,4 +22,8 @@
 
 #import <GLKit/GLKit.h>
 
+#define LGLSTRINGIZE(x) #x
+#define LGLSTRINGIZE2(x) LGLSTRINGIZE(x)
+#define LGLSHADER_STRING(text) @LGLSTRINGIZE2(text)
+
 #endif /* LGLInclude_h */

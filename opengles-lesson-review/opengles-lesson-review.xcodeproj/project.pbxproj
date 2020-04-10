@@ -20,6 +20,7 @@
 		229333DB2429DE1B002CEE1D /* frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 229333DA2429DE1B002CEE1D /* frag.glsl */; };
 		229333E22429DFA5002CEE1D /* def.png in Resources */ = {isa = PBXBuildFile; fileRef = 229333E12429DFA4002CEE1D /* def.png */; };
 		229333E32429E0C8002CEE1D /* abc.png in Resources */ = {isa = PBXBuildFile; fileRef = 229333DE2429DF2E002CEE1D /* abc.png */; };
+		22C71DF2243F109B004F7E05 /* FilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C71DF1243F109B004F7E05 /* FilterController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,8 @@
 		229333DE2429DF2E002CEE1D /* abc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abc.png; sourceTree = "<group>"; };
 		229333E12429DFA4002CEE1D /* def.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = def.png; sourceTree = "<group>"; };
 		229333E42429F369002CEE1D /* vertexes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vertexes.h; path = "../../opengl-lesson-1/opengl-lesson-8/vertexes.h"; sourceTree = "<group>"; };
+		22C71DF0243F109B004F7E05 /* FilterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterController.h; sourceTree = "<group>"; };
+		22C71DF1243F109B004F7E05 /* FilterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				229333B72429D609002CEE1D /* AppDelegate.m */,
 				229333BC2429D609002CEE1D /* ViewController.h */,
 				229333BD2429D609002CEE1D /* ViewController.m */,
+				22C71DF0243F109B004F7E05 /* FilterController.h */,
+				22C71DF1243F109B004F7E05 /* FilterController.m */,
 				229333C22429D60C002CEE1D /* Assets.xcassets */,
 				229333C42429D60C002CEE1D /* LaunchScreen.storyboard */,
 				229333C72429D60C002CEE1D /* Info.plist */,
@@ -194,6 +199,7 @@
 				229333BE2429D609002CEE1D /* ViewController.m in Sources */,
 				229333B82429D609002CEE1D /* AppDelegate.m in Sources */,
 				229333C92429D60C002CEE1D /* main.m in Sources */,
+				22C71DF2243F109B004F7E05 /* FilterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

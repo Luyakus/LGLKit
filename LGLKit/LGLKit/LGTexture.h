@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) GLuint textureUnit;
 @property (nonatomic, readonly) GLuint name;
 - (instancetype)initWithPath:(NSString *)path;
+- (instancetype)initWithImage:(UIImage *)image;
+
+- (void)active;
+- (void)bind;
 @end
 
 NS_ASSUME_NONNULL_END

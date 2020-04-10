@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithVertexShader:(LGShader *)vertexShader fragmentShader:(LGShader *)fragmentShander;
 - (void)use;
 - (void)activeTextures:(NSArray *)textures;
+
 - (void)setShaderVariable:(void(^)(GLuint prog))block;
 @end
 

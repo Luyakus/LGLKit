@@ -28,6 +28,11 @@ FOUNDATION_EXPORT const unsigned char MACLGLKitVersionString[];
 #import <LGLKit/LGVertexArrayObject.h>
 #import <LGLKit/LGVertexBufferObject.h>
 #import <LGLKit/LGVertexShader.h>
+#import <LGLKit/LGFrameBufferObject.h>
+#import <LGLKit/LGRenderBufferObject.h>
+#import <LGLKit/LGFrameBufferTexture.h>
+#import <LGLKit/LGProcessor.h>
+#import <LGLKit/LGFilter.h>
 #elif TARGET_OS_MAC
 #import <MACLGLKit/LGLInclude.h>
 #import <MACLGLKit/LGElementBuffereObject.h>
@@ -38,5 +43,8 @@ FOUNDATION_EXPORT const unsigned char MACLGLKitVersionString[];
 #import <MACLGLKit/LGVertexArrayObject.h>
 #import <MACLGLKit/LGVertexBufferObject.h>
 #import <MACLGLKit/LGVertexShader.h>
-#import <MACLGLKit/LGWindow.h>
+#import <MACLGLKit/LGFrameBufferObject.h>
+#import <MACLGLKit/LGRenderBufferObject.h>
+#import <MACLGLKit/LGFrameBufferTexture.h>
+#import <MACMACLGLKit/LGWindow.h>
 #endif

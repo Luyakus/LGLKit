@@ -26,6 +26,10 @@
     EAGLContext  *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
     [(GLKView *)self.view setContext:context];
     [EAGLContext setCurrentContext:context];
+    self.preferredFramesPerSecond = 45;
+    GLKView *view = (GLKView *)self.view;
+    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+//    view.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
     
     NSString *vertSrc = [self vertexShaderSrc];
     NSString *fragSrc = [self fragmentShaderSrc];
@@ -46,11 +50,11 @@
     NSString *texture2Path = [self texture2Path];
     LGTexture *t2 = [[LGTexture alloc] initWithPath:texture2Path];
     
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height;
-    
-    GLKMatrix4 scale = GLKMatrix4Identity;
-    scale = GLKMatrix4Scale(scale, 1, width/height, width/height);
+    GLfloat width = UIScreen.mainScreen.bounds.size.width;
+    GLfloat height = UIScreen.mainScreen.bounds.size.height;
+    GLKMatrix4 m = GLKMatrix4MakeRotation(M_PI / 4, 1, 1, 1);
+    GLKMatrix4 v = GLKMatrix4Translate(GLKMatrix4Identity, 0, 0, -5);
+    GLKMatrix4 p = GLKMatrix4MakePerspective(M_PI / 4, width/height, 0.1, 100);
     
     [self.program setShaderVariable:^(GLuint prog) {
         glUniform1i(glGetUniformLocation(prog, "texture1"), 0);
@@ -59,8 +63,9 @@
         glUniform1i(glGetUniformLocation(prog, "texture2"), 1);
         t2.textureUnit = 1;
         
-        glUniformMatrix4fv(glGetUniformLocation(prog, "rotate"), 1, GL_FALSE, GLKMatrix4Identity.m);
-        glUniformMatrix4fv(glGetUniformLocation(prog, "scale"), 1, GL_FALSE, scale.m);
+        glUniformMatrix4fv(glGetUniformLocation(prog, "model"), 1, GL_FALSE, m.m);
+        glUniformMatrix4fv(glGetUniformLocation(prog, "view"), 1, GL_FALSE, v.m);
+        glUniformMatrix4fv(glGetUniformLocation(prog, "perspective"), 1, GL_FALSE, p.m);
 
     }];
     
@@ -68,8 +73,12 @@
 }
 
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"--------");
+}
+
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    static float raidans = 0;
+    static float raidans = M_PI / 4;
     
     glEnable(GL_DEPTH_TEST);
     glClearColor(0.1, 0.2, 0.3, 1.0);
@@ -78,10 +87,9 @@
   
     [self.program use];
     [self.program setShaderVariable:^(GLuint prog) {
-        GLKMatrix4 rotate = GLKMatrix4Identity;
         raidans += 0.01;
-        rotate = GLKMatrix4Rotate(rotate, raidans, 1, 1, 1);
-        glUniformMatrix4fv(glGetUniformLocation(prog, "rotate"), 1, GL_FALSE, rotate.m);
+        GLKMatrix4 m = GLKMatrix4Rotate(GLKMatrix4Identity, raidans, 1, 1, 1);
+        glUniformMatrix4fv(glGetUniformLocation(prog, "model"), 1, GL_FALSE, m.m);
     }];
     [self.program activeTextures:self.textures];
     [self.vao draw];

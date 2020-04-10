@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface NSArray(LGLEBO)
-+ (NSArray *)arraryWithIndexArray:(GLuint[])indexArray length:(GLuint)length;
++ (NSArray *)arraryWithIndexArray:(GLuint[_Nonnull])indexArray length:(GLuint)length;
 @end
 
 @interface LGElementBuffereObject : NSObject

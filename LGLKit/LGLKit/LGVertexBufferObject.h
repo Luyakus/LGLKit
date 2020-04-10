@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define LGLfloatArrayPack(_arr, _length) [NSArray arraryWithVertexArray:(_arr) length:(_length)]
 
 @interface NSArray(LGLVBO)
-+ (NSArray *)arraryWithVertexArray:(GLfloat[])vertexArray length:(GLuint)length;
++ (NSArray *)arraryWithVertexArray:(GLfloat[_Nonnull])vertexArray length:(GLuint)length;
 @end
 
 @interface LGVertexBufferObject : NSObject

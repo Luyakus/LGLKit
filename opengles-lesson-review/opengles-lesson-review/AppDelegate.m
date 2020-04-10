@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "FilterController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,7 +22,7 @@
     self.window = w;
     [self.window makeKeyAndVisible];
     
-    ViewController *vc = [[ViewController alloc] init];
+    FilterController *vc = [[FilterController alloc] init];
     window.rootViewController = vc;
        
     return YES;

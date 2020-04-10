@@ -47,8 +47,8 @@
     [self use];
     for (int i = 0; i < textures.count; i ++) {
         LGTexture *t = textures[i];
-        glActiveTexture(GL_TEXTURE0 + t.textureUnit);
-        glBindTexture(GL_TEXTURE_2D, t.name);
+        [t active];
+        [t bind];
     }
 }
 @end
