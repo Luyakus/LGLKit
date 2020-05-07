@@ -50,15 +50,29 @@
                            }";
     LGFilter *f2 =  [[LGFilter alloc] initWithFragmentShader:f2Shader];
     
+    NSString *f3Shader = @"#version 300 es\
+                           precision mediump float;\
+                           uniform sampler2D texture1;\
+                           in vec2 texcoord;\
+                           out vec4 fragColor;\
+                           void main() {\
+                               vec4 aColor = texture(texture1, texcoord);\
+                               float gray = (aColor.r + aColor.g + aColor.b) / 3.0;\
+                               fragColor = vec4(gray, gray, gray, 1);\
+                          }";
+    LGFilter *f3 = [[LGFilter alloc] initWithFragmentShader:f3Shader];
+    
     [p addFilter:f1];
     [p addFilter:f2];
+    [p addFilter:f3];
     UIImage *i1 = [UIImage imageNamed:@"cap"];
+    NSLog(@"------------");
     i1 = [p processImage:i1];
+    NSLog(@"------------");
 
     UIImageView *v1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 200)];
     v1.image = i1;
     [self.view addSubview:v1];
-
 }
 
 

@@ -70,3 +70,6 @@ iOSInjectionProject/
 /opengl-lglkit.xcworkspace/xcuserdata/sam.xcuserdatad/UserInterfaceState.xcuserstate
 /opengles-lesson-review/opengles-lesson-review.xcodeproj/xcuserdata/sam.xcuserdatad/xcschemes/xcschememanagement.plist
 *.xcuserstate
+UserInterfaceState.xcuserstate
+*.xcbkptlist
+Breakpoints_v2.xcbkptlist

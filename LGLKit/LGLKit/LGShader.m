@@ -23,6 +23,7 @@
         if (!isSuccess) {
             glGetShaderInfoLog(shader, 512, NULL, info);
             NSLog(@"%@ %s", (self.shaderType == GL_VERTEX_SHADER ? @"vertexShader" : @"fragmentShader"), info);
+            NSAssert(nil, nil);
             return nil;
         }
         self.shader = shader;

@@ -38,6 +38,7 @@
         sum += [vbo.lineWidth[i] intValue];
     }
     
+    // https://www.zhihu.com/question/39295898
     for (int i = 0, offset = 0; i < vbo.lineWidth.count; i ++) {
         int lineWidth = [vbo.lineWidth[i] intValue];
         glVertexAttribPointer(i, lineWidth, GL_FLOAT, GL_FALSE, sum * sizeof(float), (void *)(offset * sizeof(float)));
