@@ -14,8 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LGTexture : NSObject
 @property (nonatomic, assign) GLuint textureUnit;
 @property (nonatomic, readonly) GLuint name;
+
+#if TARGET_OS_MAC
 - (instancetype)initWithPath:(NSString *)path;
+#elif TARGET_OS_IPHONE
 - (instancetype)initWithImage:(UIImage *)image;
+#endif
 
 - (void)active;
 - (void)bind;

@@ -35,6 +35,7 @@ FOUNDATION_EXPORT const unsigned char MACLGLKitVersionString[];
 #import <LGLKit/LGFilter.h>
 #elif TARGET_OS_MAC
 #import <MACLGLKit/LGLInclude.h>
+#import <MACLGLKit/LGWindow.h>
 #import <MACLGLKit/LGElementBuffereObject.h>
 #import <MACLGLKit/LGFragmentShader.h>
 #import <MACLGLKit/LGProgram.h>
@@ -46,5 +47,4 @@ FOUNDATION_EXPORT const unsigned char MACLGLKitVersionString[];
 #import <MACLGLKit/LGFrameBufferObject.h>
 #import <MACLGLKit/LGRenderBufferObject.h>
 #import <MACLGLKit/LGFrameBufferTexture.h>
-#import <MACMACLGLKit/LGWindow.h>
 #endif

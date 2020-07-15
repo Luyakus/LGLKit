@@ -21,9 +21,6 @@
         GLuint vbo;
         glGenBuffers(1, &vbo);
         self.vbo = vbo;
-        
-        GLfloat arr[100];
-        [NSArray arraryWithVertexArray:arr length:100];
     }
     return self;
 }

@@ -13,13 +13,13 @@
 @implementation LGLTransformTest
 
 static NSString *vertexShaderString(void) {
-    NSString *path = @"/Volumes/Sam/音视频/opengl/opengl-lesson-review/opengl-lesson-review/transform/transform_vert.glsl";
+    NSString *path = @"/Users/sam/Desktop/iOS/LGLKit/opengl-lesson-review/opengl-lesson-review/transform/transform_vert.glsl";
     NSString *src = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     return src;
 }
 
 static NSString *fragmentShaderString(void) {
-    NSString *path = @"/Volumes/Sam/音视频/opengl/opengl-lesson-review/opengl-lesson-review/transform/transform_frag.glsl";
+    NSString *path = @"/Users/sam/Desktop/iOS/LGLKit/opengl-lesson-review/opengl-lesson-review/transform/transform_frag.glsl";
     NSString *src = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     return src;
 }
@@ -39,7 +39,7 @@ static NSString *fragmentShaderString(void) {
     LGFragmentShader *fs = [[LGFragmentShader alloc] initWithString:fragmentShaderString()];
     LGProgram *program = [[LGProgram alloc] initWithVertexShader:vs fragmentShader:fs];
     
-    LGTexture *t = [[LGTexture alloc] initWithPath:@"/Volumes/Sam/音视频/opengl/opengl-lesson-review/opengl-lesson-review/abc.png"];
+    LGTexture *t = [[LGTexture alloc] initWithPath:@"/Users/sam/Desktop/iOS/LGLKit/opengl-lesson-review/opengl-lesson-review/abc.png"];
     [program setShaderVariable:^(GLuint prog) {
         glUniform1i(glGetUniformLocation(prog, "texture1"), 0);
         t.textureUnit = 0;

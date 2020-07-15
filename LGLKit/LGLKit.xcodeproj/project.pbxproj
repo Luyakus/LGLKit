@@ -46,15 +46,15 @@
 		229333A72429D256002CEE1D /* LGElementBuffereObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 229333842429D255002CEE1D /* LGElementBuffereObject.m */; };
 		229333A92429D256002CEE1D /* LGWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 229333852429D255002CEE1D /* LGWindow.m */; };
 		22C71DCF243C2330004F7E05 /* LGFrameBufferObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DCD243C2330004F7E05 /* LGFrameBufferObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22C71DD0243C2330004F7E05 /* LGFrameBufferObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DCD243C2330004F7E05 /* LGFrameBufferObject.h */; };
+		22C71DD0243C2330004F7E05 /* LGFrameBufferObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DCD243C2330004F7E05 /* LGFrameBufferObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C71DD1243C2330004F7E05 /* LGFrameBufferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C71DCE243C2330004F7E05 /* LGFrameBufferObject.m */; };
 		22C71DD2243C2330004F7E05 /* LGFrameBufferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C71DCE243C2330004F7E05 /* LGFrameBufferObject.m */; };
 		22C71DD5243C2345004F7E05 /* LGRenderBufferObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DD3243C2345004F7E05 /* LGRenderBufferObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22C71DD6243C2345004F7E05 /* LGRenderBufferObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DD3243C2345004F7E05 /* LGRenderBufferObject.h */; };
+		22C71DD6243C2345004F7E05 /* LGRenderBufferObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DD3243C2345004F7E05 /* LGRenderBufferObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C71DD7243C2345004F7E05 /* LGRenderBufferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C71DD4243C2345004F7E05 /* LGRenderBufferObject.m */; };
 		22C71DD8243C2345004F7E05 /* LGRenderBufferObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C71DD4243C2345004F7E05 /* LGRenderBufferObject.m */; };
 		22C71DDB243C236D004F7E05 /* LGFrameBufferTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DD9243C236D004F7E05 /* LGFrameBufferTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22C71DDC243C236D004F7E05 /* LGFrameBufferTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DD9243C236D004F7E05 /* LGFrameBufferTexture.h */; };
+		22C71DDC243C236D004F7E05 /* LGFrameBufferTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DD9243C236D004F7E05 /* LGFrameBufferTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C71DDD243C236D004F7E05 /* LGFrameBufferTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C71DDA243C236D004F7E05 /* LGFrameBufferTexture.m */; };
 		22C71DDE243C236D004F7E05 /* LGFrameBufferTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C71DDA243C236D004F7E05 /* LGFrameBufferTexture.m */; };
 		22C71DE1243C2E98004F7E05 /* LGFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C71DDF243C2E98004F7E05 /* LGFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2280BB5D24BECF9D0014714A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		229333212429CCA6002CEE1D /* LGLKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LGLKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		229333242429CCA6002CEE1D /* LGLKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGLKit.h; sourceTree = "<group>"; };
 		229333252429CCA6002CEE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,12 +123,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2280BB5C24BECF9C0014714A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2280BB5D24BECF9D0014714A /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		229333172429CCA6002CEE1D = {
 			isa = PBXGroup;
 			children = (
 				229333232429CCA6002CEE1D /* LGLKit */,
 				229333222429CCA6002CEE1D /* Products */,
 				2293336C2429CD69002CEE1D /* LGLKit copy-Info.plist */,
+				2280BB5C24BECF9C0014714A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -481,7 +491,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BBH3U98L88;
+				DEVELOPMENT_TEAM = V9ARFA6DSC;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -504,7 +514,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BBH3U98L88;
+				DEVELOPMENT_TEAM = V9ARFA6DSC;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -528,7 +538,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BBH3U98L88;
+				DEVELOPMENT_TEAM = V9ARFA6DSC;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -542,7 +552,7 @@
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-l",
-					glfw3,
+					glfw,
 					"-objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sam.www.LGLKit;
@@ -560,7 +570,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BBH3U98L88;
+				DEVELOPMENT_TEAM = V9ARFA6DSC;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -574,7 +584,7 @@
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-l",
-					glfw3,
+					glfw,
 					"-objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sam.www.LGLKit;

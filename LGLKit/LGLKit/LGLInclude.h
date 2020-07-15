@@ -17,7 +17,7 @@
 
 #include <GLFW/glfw3.h>
 #import <OpenGL/gl3.h>
-
+#import <AppKit/AppKit.h>
 #endif
 
 #import <GLKit/GLKit.h>

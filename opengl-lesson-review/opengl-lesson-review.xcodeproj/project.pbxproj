@@ -52,6 +52,7 @@
 		22C6E04524283FBB003E7795 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22C6E04724283FEC003E7795 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		22C6E0522428558A003E7795 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		22CBB83824BEDC4A00D5B93D /* opengl-lesson-review.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "opengl-lesson-review.entitlements"; sourceTree = "<group>"; };
 		22DD77B1242AEF950027031E /* triangle_frag.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = triangle_frag.glsl; sourceTree = "<group>"; };
 		22DD77B2242AEF950027031E /* triangle_vert.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = triangle_vert.glsl; sourceTree = "<group>"; };
 		22DD77B3242AF0E10027031E /* LGLTriangleTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGLTriangleTest.h; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		22C6E02424273519003E7795 /* opengl-lesson-review */ = {
 			isa = PBXGroup;
 			children = (
+				22CBB83824BEDC4A00D5B93D /* opengl-lesson-review.entitlements */,
 				22DD77C2242B0C7F0027031E /* transform */,
 				22DD77BC242B017E0027031E /* cube */,
 				22DD77B6242AFD490027031E /* texture */,
@@ -354,15 +356,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "opengl-lesson-review/opengl-lesson-review.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BBH3U98L88;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"-l",
-					glfw3,
+					glfw,
 					"-objc",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,15 +378,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "opengl-lesson-review/opengl-lesson-review.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BBH3U98L88;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"-l",
-					glfw3,
+					glfw,
 					"-objc",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

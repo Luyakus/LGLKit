@@ -21,14 +21,11 @@
     UIWindow *w = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window = w;
     [self.window makeKeyAndVisible];
-    
+//    ViewController *vc  =[[ViewController alloc] init];
     FilterController *vc = [[FilterController alloc] init];
     window.rootViewController = vc;
        
     return YES;
 }
-
-
-#pragma mark - UISceneSession lifecycle
 
 @end

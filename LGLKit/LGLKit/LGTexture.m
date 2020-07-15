@@ -12,6 +12,8 @@
 @property (nonatomic, strong) GLKTextureInfo *texture;
 @end
 @implementation LGTexture
+
+#if TARGET_OS_MAC
 - (instancetype)initWithPath:(NSString *)path {
     NSError *err = nil;
     if (self = [super init]) {
@@ -20,11 +22,12 @@
     return self;
 }
 
+#elif TARGET_OS_IPHONE
 - (instancetype)initWithImage:(UIImage *)image {
     NSError *err = nil;
     if (self = [super init]) {
 //        CGImageRef ref = CGImageCreateCopy(image.CGImage);
-        NSData *data = UIImagePNGRepresentation(image);
+        NSData *data = (__bridge_transfer NSData *)UIImagePNGRepresentation(image);
         UIImage *_ = [UIImage imageWithData:data];
         self.texture = [GLKTextureLoader textureWithContentsOfData:data options:@{GLKTextureLoaderOriginBottomLeft:@(YES)} error:&err];
 //        self.texture = [GLKTextureLoader textureWithCGImage:ref options:@{GLKTextureLoaderOriginBottomLeft:@(YES)} error:&err];
@@ -33,6 +36,7 @@
     }
     return self;
 }
+#endif
 
 - (void)active {
     glActiveTexture(GL_TEXTURE0 + self.textureUnit);
