@@ -12,14 +12,20 @@
 
 @implementation LGLTransformTest
 
+static NSString *sourcePathForName(NSString * relativePath) {
+    NSString *filePath = [NSString stringWithFormat:@"%s", __FILE__];
+    NSString *sourcePath = [filePath.stringByDeletingLastPathComponent stringByAppendingPathComponent:relativePath];
+    return sourcePath;
+}
+
 static NSString *vertexShaderString(void) {
-    NSString *path = @"/Users/sam/Desktop/iOS/LGLKit/opengl-lesson-review/opengl-lesson-review/transform/transform_vert.glsl";
+    NSString *path = sourcePathForName(@"transform_vert.glsl");
     NSString *src = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     return src;
 }
 
 static NSString *fragmentShaderString(void) {
-    NSString *path = @"/Users/sam/Desktop/iOS/LGLKit/opengl-lesson-review/opengl-lesson-review/transform/transform_frag.glsl";
+    NSString *path = sourcePathForName(@"transform_frag.glsl");
     NSString *src = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     return src;
 }
@@ -39,7 +45,7 @@ static NSString *fragmentShaderString(void) {
     LGFragmentShader *fs = [[LGFragmentShader alloc] initWithString:fragmentShaderString()];
     LGProgram *program = [[LGProgram alloc] initWithVertexShader:vs fragmentShader:fs];
     
-    LGTexture *t = [[LGTexture alloc] initWithPath:@"/Users/sam/Desktop/iOS/LGLKit/opengl-lesson-review/opengl-lesson-review/abc.png"];
+    LGTexture *t = [[LGTexture alloc] initWithPath:sourcePathForName(@"../abc.png")];
     [program setShaderVariable:^(GLuint prog) {
         glUniform1i(glGetUniformLocation(prog, "texture1"), 0);
         t.textureUnit = 0;
@@ -61,4 +67,6 @@ static NSString *fragmentShaderString(void) {
     }];
 
 }
+
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <TargetConditionals.h>
 #import "LGLInclude.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,11 +16,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) GLuint textureUnit;
 @property (nonatomic, readonly) GLuint name;
 
-#if TARGET_OS_MAC
-- (instancetype)initWithPath:(NSString *)path;
-#elif TARGET_OS_IPHONE
+
+#if TARGET_OS_IPHONE
 - (instancetype)initWithImage:(UIImage *)image;
+- (instancetype)initWithPath:(NSString *)path;
+
+#else
+- (instancetype)initWithPath:(NSString *)path;
+
 #endif
+
+
 
 - (void)active;
 - (void)bind;

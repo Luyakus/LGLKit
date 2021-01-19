@@ -359,7 +359,7 @@
 				CODE_SIGN_ENTITLEMENTS = "opengl-lesson-review/opengl-lesson-review.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BBH3U98L88;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
@@ -381,7 +381,7 @@
 				CODE_SIGN_ENTITLEMENTS = "opengl-lesson-review/opengl-lesson-review.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BBH3U98L88;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
