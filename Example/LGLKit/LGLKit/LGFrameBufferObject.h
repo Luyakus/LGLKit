@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)attchRenderBufferObject:(LGRenderBufferObject *)rbo;
 - (BOOL)complete;
 - (void)bind;
+- (void)unBind;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -48,9 +48,25 @@ static NSString *fragmentShaderString(void) {
                                  lineWidth:@[@3, @2]];
     [vao addVertexBufferObject:vbo];
     
+    GLfloat trangle[] = {
+        0.7, 0.8, 0, 1, 0,
+        0.7, 0.5, 0, 0, 1,
+        1, 0.5, 0, 1, 1
+    };
+    LGVertexArrayObject *vao1 = [[LGVertexArrayObject alloc] init];
+    LGVertexBufferObject *vbo1 = [[LGVertexBufferObject alloc]
+                                 initWithVertexArray:LGLfloatArrayPack(trangle, sizeof(trangle)/sizeof(float))
+                                 lineWidth:@[@3, @2]];
+    [vao1 addVertexBufferObject:vbo1];
+    
     LGVertexShader *vs = [[LGVertexShader alloc] initWithString:vertexShaderString()];
     LGFragmentShader *fs = [[LGFragmentShader alloc] initWithString:fragmentShaderString()];
     LGProgram *program = [[LGProgram alloc] initWithVertexShader:vs fragmentShader:fs];
+    
+    
+    LGVertexShader *vs1 = [[LGVertexShader alloc] initWithString:vertexShaderString()];
+    LGFragmentShader *fs1 = [[LGFragmentShader alloc] initWithString:fragmentShaderString()];
+    LGProgram *program1 = [[LGProgram alloc] initWithVertexShader:vs1 fragmentShader:fs1];
     
     LGTexture *t = [[LGTexture alloc] initWithPath:sourcePathForName(@"../abc.png")];
     [program setShaderVariable:^(GLuint prog) {
@@ -61,7 +77,11 @@ static NSString *fragmentShaderString(void) {
     [w render:^{
         [program use];
         [program activeTextures:@[t]];
+        
+        [program1 use];
+        [program activeTextures:@[t]];
         [vao draw];
+        [vao1 draw];
     }];
 }
 @end

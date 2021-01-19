@@ -16,9 +16,9 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        [LGLTriangleTest test];
-//        [LGLTextureTest test];
+        [LGLTextureTest test];
 //        [LGLCubeTest test];
-        [LGLTransformTest test];
+//        [LGLTransformTest test];
     }
     return 0;
 }

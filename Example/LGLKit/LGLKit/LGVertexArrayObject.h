@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addVertexBufferObject:(LGVertexBufferObject *)vbo;
 - (void)addElementBufferObject:(LGElementBuffereObject *)ebo;
 - (void)draw;
+
 @end
 
 NS_ASSUME_NONNULL_END

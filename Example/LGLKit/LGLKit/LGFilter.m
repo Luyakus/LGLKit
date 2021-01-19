@@ -79,6 +79,7 @@
     if (self.renderBlock) self.renderBlock(self.program);
     glBindTexture(GL_TEXTURE_2D, self.inTexture);
     [self.vao draw];
+    [self.fbo unBind];
     return texture.name;
 }
 
@@ -110,6 +111,7 @@
     CFRelease(ref);
     CFRelease(colorspace);
     CGImageRelease(iref);
+    [self.fbo unBind];
     return image;
 }
 @end

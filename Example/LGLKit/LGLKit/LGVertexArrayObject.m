@@ -24,7 +24,7 @@
 }
 
 - (void)addVertexBufferObject:(LGVertexBufferObject *)vbo {
-    glBindVertexArray(self.vao);
+    [self bind];
     glBindBuffer(GL_ARRAY_BUFFER, vbo.vbo);
     
     GLfloat vertexes[vbo.vertexArray.count];
@@ -48,10 +48,11 @@
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
     self.vertexesCount = (GLuint)vbo.vertexArray.count / sum;
+    [self bind];
 }
 
 - (void)addElementBufferObject:(LGElementBuffereObject *)ebo {
-    glBindVertexArray(self.vao);
+    [self bind];
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo.ebo);
     
     int indexes[ebo.indexArray.count];
@@ -61,14 +62,24 @@
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexes), indexes, GL_STATIC_DRAW);
     self.hasEbo = YES;
     self.indexesCount = (GLuint)ebo.indexArray.count;
+    [self unbind];
 }
 
 - (void)draw {
+    [self bind];
     glBindVertexArray(self.vao);
     if (self.hasEbo) {
         glDrawElements(GL_TRIANGLES, self.indexesCount, GL_UNSIGNED_INT, 0);
     } else {
         glDrawArrays(GL_TRIANGLES, 0, self.vertexesCount);
     }
+    [self unbind];
+}
+
+- (void)bind {
+    glBindVertexArray(self.vao);
+}
+- (void)unbind {
+    glBindVertexArray(0);
 }
 @end
