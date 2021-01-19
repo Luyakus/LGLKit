@@ -109,20 +109,14 @@ int main(int argc, const char *argv[]) {
     glfwMakeContextCurrent(w);
     glfwSetFramebufferSizeCallback(w, windowSizeChangeCallback);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-        NSLog(@"glad 初始化失败");
-        return -1;
-    }
-
-    NSString *vertexPath = @"/Volumes/Sam/音视频/opengl/opengl-lesson-1/opengl-lesson-2/vert.glsl";
-    NSString *fragPath = @"/Volumes/Sam/音视频/opengl/opengl-lesson-1/opengl-lesson-2/frag.glsl";
+    NSString *vertexPath = @"/Users/dz0400817/Desktop/iOS/LGLKit/Study/opengl-lesson-1/opengl-lesson-2/vert.glsl";
+    NSString *fragPath = @"/Users/dz0400817/Desktop/iOS/LGLKit/Study/opengl-lesson-1/opengl-lesson-2/frag.glsl";
     int vertexShader = compileShader(vertexPath, GL_VERTEX_SHADER);
     int fragmentShader = compileShader(fragPath, GL_FRAGMENT_SHADER);
     int program = createProgramWithShader(vertexShader, fragmentShader);
 
     int vao = bindVao();
 
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     while (!glfwWindowShouldClose(w)) {
         processInput(w);
 

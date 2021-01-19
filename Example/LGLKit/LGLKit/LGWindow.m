@@ -43,10 +43,6 @@ void framebufferSizeChangeCallback(GLFWwindow *w, int width, int height) {
     }
     glfwMakeContextCurrent(w);
     glfwSetFramebufferSizeCallback(w, framebufferSizeChangeCallback);
-//    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-//        NSLog(@"glad 初始化失败");
-//        return nil;
-//    }
     return w;
 }
 

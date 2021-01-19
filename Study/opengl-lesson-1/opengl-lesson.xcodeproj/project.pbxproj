@@ -1379,7 +1379,7 @@
 				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
 				OTHER_LDFLAGS = (
 					"-l",
-					glfw3,
+					glfw,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
@@ -1396,7 +1396,7 @@
 				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
 				OTHER_LDFLAGS = (
 					"-l",
-					glfw3,
+					glfw,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
